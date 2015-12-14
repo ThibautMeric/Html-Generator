@@ -18,17 +18,22 @@ def InitializePM(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTab
         i.destroy()
         lfParameters.grid_rowconfigure(y, minsize=1)
 
+
     CallGenerateHtml = lambda event: GenerateHtml(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTable, SupportedVersion, WellSize, PanelColor, CardColor, lfsize, ActivationTable, CardPack, ButtonColor,Align)
     CallGenerateHtmlNoEvent = lambda : GenerateHtml(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTable, SupportedVersion, WellSize, PanelColor, CardColor, lfsize, ActivationTable, CardPack, ButtonColor,Align)
     CallGenerateHtmlThreeEvent = lambda event1,event2,event3: GenerateHtml(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTable, SupportedVersion, WellSize, PanelColor, CardColor, lfsize, ActivationTable, CardPack, ButtonColor,Align)
 
+    lfParameters.bind_all("<Enter>",CallGenerateHtml)
+    lfParameters.bind_all("<Leave>",CallGenerateHtml)
+    lfParameters.bind("<Motion>",CallGenerateHtml)
 
     if(lfBoxType.children["elementchoice"].get() == TypeTable[SupportedVersion[0]][0]):#if Panel
 
         CBTitle = tk.Label(lfParameters, text="Title:", name="cbtitle")
         TitleText = StringVar()
+        TitleText.trace_variable("w",CallGenerateHtmlThreeEvent)
         ETitle = tk.Entry(lfParameters, textvariable=TitleText, name="etitle")
-        TitleText.trace("w",CallGenerateHtmlThreeEvent)
+
         CBSize = ttk.Combobox(lfParameters, values=["","h1","h2","h3","h4","h5","h6"], state='readonly', name="cbsize",width=4)
         CBSize.set("")
         CBSize.bind("<<ComboboxSelected>>",CallGenerateHtml)
