@@ -5,7 +5,6 @@ try:
     import tkinter as tk
     import tkinter.ttk as ttk
     from tkinter import *
-    #version =2
 except:
     import Tkinter as tk
     import ttk as ttk
@@ -23,12 +22,10 @@ def InitializePM(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTab
     CallGenerateHtml = lambda event: GenerateHtml(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTable, SupportedVersion, WellSize, PanelColor, CardColor, lfsize, ActivationTable, CardPack, ButtonColor,Align)
     CallGenerateHtmlNoEvent = lambda : GenerateHtml(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTable, SupportedVersion, WellSize, PanelColor, CardColor, lfsize, ActivationTable, CardPack, ButtonColor,Align)
     CallGenerateHtmlThreeEvent = lambda event1,event2,event3: GenerateHtml(lfParameters, lfBoxType, lfOutpout, lfTabSize, TabSize, TypeTable, SupportedVersion, WellSize, PanelColor, CardColor, lfsize, ActivationTable, CardPack, ButtonColor,Align)
-    #if (version==2):
-        #print("salut")
+
     lfParameters.bind_all("<Enter>",CallGenerateHtml)
     lfParameters.bind_all("<Leave>",CallGenerateHtml)
     lfParameters.bind("<Motion>",CallGenerateHtml)
-        #print("v="+version)
 
     if(lfBoxType.children["elementchoice"].get() == TypeTable[SupportedVersion[0]][0]):#if Panel
 
