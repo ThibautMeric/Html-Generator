@@ -3,7 +3,7 @@ import html_generator
 setup(name = 'html_generator',
       version = html_generator.__version__,
       packages = find_packages(),
-      entry_points = {'gui_scripts': ['html-generator = html_generator.html_generator:main',]},
+      entry_points = {'gui_scripts': ['html-generator = html_generator.htmlgenerator:main',]},
       description='Generate html code for Bootstrap 3 & 4',
       long_description='You can create Panel, Well, Thumbails, Cards, header, footer, paragraph, images define size padding etc',
       author='Thibaut Meric',

@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: html-generator
+Version: 1.0
+Summary: Generate html code for Bootstrap 3 & 4
+Home-page: www.microchip.com/iot/
+Author: Iot & HASG Group
+Author-email: xxxxxx@microchip.com
+License: UNKNOWN
+Description: You can create Panel, Well, Thumbails, Cards, header, footer, paragraph, images define size padding etc
+Keywords: CSS HTML
+Platform: Operating System :: MacOS :: MacOS X
+Platform: Operating System :: Microsoft :: Windows
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: DevelopersLicense :: OSI Approved :: MIT License
+Classifier: Natural Language :: English

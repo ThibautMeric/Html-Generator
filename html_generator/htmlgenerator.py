@@ -13,26 +13,26 @@ except:
     import Tkinter as tk
     import ttk as ttk
     from Tkinter import *
-from Parameters.InitBootVersion import *
-from Parameters.InitElementType import *
-from Parameters.InitParameters import *
-from Parameters.InitSize import *
-from Parameters.InitTabSize import *
-from Output.InitOutput import *
+from html_generator.Parameters.InitBootVersion import *
+from html_generator.Parameters.InitElementType import *
+from html_generator.Parameters.InitParameters import *
+from html_generator.Parameters.InitSize import *
+from html_generator.Parameters.InitTabSize import *
+from html_generator.Output.InitOutput import *
 
-from Parameters.RefreshBootVersion import *
-from Parameters.RefreshElementType import *
-from Parameters.RefreshParameters import *
-from Parameters.RefreshSize import *
-from Parameters.RefreshTabSize import *
-from Output.RefreshOutput import *
+from html_generator.Parameters.RefreshBootVersion import *
+from html_generator.Parameters.RefreshElementType import *
+from html_generator.Parameters.RefreshParameters import *
+from html_generator.Parameters.RefreshSize import *
+from html_generator.Parameters.RefreshTabSize import *
+from html_generator.Output.RefreshOutput import *
 import platform
-
+import html_generator
 
     #######################
     ##GENERAL DECLARATION##
     #######################
-Version = "v0.8"
+Version = html_generator.__version__
 SupportedVersion = ["Bootstrap 3.xx", "Bootstrap 4.xx","General"]
 Bootstrap3Type = ["Panel", "Thumbnail", "Well"]
 Bootstrap4Type = ["Card"]
@@ -66,7 +66,7 @@ for i in range(0,8):
     Activation = StringVar()
     Activation.set(0)
     ActivationTable[0].append(Activation)
-    
+
 for i in range(0,2):
     Activation = StringVar()
     Activation.set(0)
@@ -97,7 +97,7 @@ lfBoxType = tk.LabelFrame(Window, text="Choose Box Type:")
 lfParameters = tk.LabelFrame(Window, text="Select your Parameters:")
 lfSize = tk.LabelFrame(Window, text="Choose Size Options:")
 lfOutpout = tk.LabelFrame(Window, text="Output Code:")
-lfTabSize = tk.LabelFrame(Window, text="Define Tab Size:") 
+lfTabSize = tk.LabelFrame(Window, text="Define Tab Size:")
 
 InitializeBV(lfParameters,lfBootVersion, lfSize, lfOutpout, lfBoxType, TypeTable,SupportedVersion, WellSize, PanelColor, CardColor, ActivationTable, CardPack, lfTabSize, TabSize, Units, ButtonColor,Align)
 InitializeET(lfParameters,lfBootVersion, lfSize, lfOutpout, lfBoxType, TypeTable,SupportedVersion, WellSize, PanelColor, CardColor, ActivationTable, CardPack, lfTabSize, TabSize, Units, ButtonColor,Align)
@@ -115,3 +115,6 @@ RefreshTabSize(lfTabSize)
 
 
 Window.mainloop()
+
+if __name__ == "__main__":
+    main()

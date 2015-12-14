@@ -1,0 +1,3 @@
+[gui_scripts]
+html-generator = html_generator.htmlgenerator:main
+
